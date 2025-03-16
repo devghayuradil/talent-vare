@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "NeueHaasGrotesk";
+  src: url("/fonts/NeueHaasDisplayMediu.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NeueHaasGrotesk";
+  src: url("/fonts/NeueHaasDisplayBold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
