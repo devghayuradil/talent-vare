@@ -13,12 +13,12 @@ export const FindJobs = (): JSX.Element => {
       {/* Main Content */}
       <main className="bg-[#f4f4f4] py-6">
         
-          <div className="flex px-[50px]">
+          <div className="flex flex-wrap lg:justify-center px-[50px]">
             {/* Left Sidebar - User Profile */}
             <UserProfileSection />
 
             {/* Main Content - Job Listings */}
-            <div className="flex-1 py-3 px-6">
+            <div className="flex-1 py-3 lg:px-6 max-lg:w-full max-md:py-5">
               <JobListingsSection />
               <Separator className="my-6" />
             </div>

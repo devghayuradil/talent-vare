@@ -261,7 +261,7 @@ export const JobListingsSection = (): JSX.Element => {
   const JobCard = ({ job }: { job: (typeof featuredJobs)[0] }) => (
     <Card className="flex-none border rounded-[10px] overflow-hidden">
       <CardContent className="p-5">
-        <div className="flex flex-col w-[142px] items-start gap-[15px]">
+        <div className="flex flex-col w-[142px] items-start gap-[15px] max-md:w-full">
           <div className="flex flex-col items-start gap-[5px] w-full">
             {job.id <= 5 && (
               <div className="text-[#333333] text-[10px] [font-family:'Neue_Haas_Grotesk_Display_Pro-Mediu',Helvetica] font-normal">
@@ -300,8 +300,8 @@ export const JobListingsSection = (): JSX.Element => {
               </div>
             </div>
           </div>
-          <div className="flex items-center gap-5 w-full">
-            <Button className="px-[30px] py-2.5 bg-[#0154aa] rounded-[6.13px]  text-xs">
+          <div className="flex items-center gap-5 w-full max-md:justify-between">
+            <Button className="px-[30px] py-2.5 bg-[#0154aa] rounded-[6.13px]  text-xs max-md:w-full">
               Apply Now
             </Button>
             <div>
@@ -315,7 +315,7 @@ export const JobListingsSection = (): JSX.Element => {
 
   return (
     <section className="flex flex-col w-full items-start gap-[21px]">
-      <header className="flex flex-col w-full max-w-[644px] items-start gap-[5px]">
+      <header className="flex flex-col w-full lg:max-w-[644px] items-start gap-[5px]">
         <h1 className="w-full font-neue font-semibold text-[22px]">
           <span className="text-[#333333]">Find your Dream Job, </span>
           <span className="text-[#0154aa]">Albert!</span>
@@ -326,14 +326,14 @@ export const JobListingsSection = (): JSX.Element => {
         </p>
       </header>
 
-      <div className="flex flex-col items-start gap-2.5 p-5 w-full bg-white rounded-[10px] border border-solid">
-        <div className="flex items-center justify-between w-full">
+      <div className="p-5 w-full bg-white rounded-[10px] border border-solid">
+        <div className="flex max-lg:flex-col max-lg:gap-4 items-center justify-between w-full">
           <Input
             className="outline-none border-none shadow-none w-full text-sm text-text-2 focus-visible:outline-none focus-visible:border-none focus-visible:shadow-none"
             placeholder="Job Title, Company, or Keywords"
           />
-          <div className="flex items-center gap-7">
-            <div className="text-[#01274E] opacity-50">|</div>
+          <div className="flex w-full items-center gap-7 max-md:flex-wrap">
+            <div className="text-[#01274E] opacity-50 max-lg:hidden">|</div>
             <Menu>
               <MenuButton className="inline-flex items-center gap-2 py-1.5 px-3 text-sm/6 text-text-2 shadow-inner shadow-white/10 focus:outline-none text-nowrap">
                 Select Location
@@ -379,7 +379,7 @@ export const JobListingsSection = (): JSX.Element => {
                 </MenuItem>
               </MenuItems>
             </Menu>
-            <div className="text-[#01274E] opacity-50">|</div>
+            <div className="text-[#01274E] opacity-50 max-lg:hidden">|</div>
             <Menu>
               <MenuButton className="inline-flex items-center gap-2 py-1.5 px-3 text-sm/6 text-text-2 shadow-inner shadow-white/10 focus:outline-none text-nowrap">
                 Job Type
@@ -425,7 +425,7 @@ export const JobListingsSection = (): JSX.Element => {
                 </MenuItem>
               </MenuItems>
             </Menu>
-            <Button className="w-[140px] h-[37px] bg-[#0154aa] rounded-lg flex items-center justify-center gap-2.5">
+            <Button className="w-[140px] h-[37px] bg-[#0154aa] rounded-lg flex items-center justify-center gap-2.5 max-lg:w-full">
               <SearchIcon className="w-[15.5px] h-[15.52px]" />
               <span className=" font-normal text-white text-sm">Search</span>
             </Button>
@@ -435,7 +435,7 @@ export const JobListingsSection = (): JSX.Element => {
 
       <div className="flex items-center gap-[15px]">
         <span className="text-[#737a91]  font-normal text-sm">Similar:</span>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 max-md:flex-wrap">
           {similarTags.map((tag, index) => (
             <Badge
               key={index}
@@ -456,7 +456,7 @@ export const JobListingsSection = (): JSX.Element => {
           </a>
         </div>
 
-        <div className="flex gap-4 w-full items-center">
+        <div className="flex gap-4 w-full items-center max-lg:flex-wrap">
           {featuredJobs.map((job) => (
             <JobCard key={job.id} job={job} />
           ))}
@@ -477,13 +477,13 @@ export const JobListingsSection = (): JSX.Element => {
             </a>
           </div>
 
-          <div className="flex gap-4 w-full items-center">
+          <div className="flex gap-4 w-full items-center max-md:flex-wrap">
             {recommendedJobs.map((job) => (
               <JobCard key={job.id} job={job} />
             ))}
           </div>
 
-          <div className="flex gap-4 w-full items-center">
+          <div className="flex gap-4 w-full items-center max-md:flex-wrap">
             {recommendedJobsRow2.map((job) => (
               <JobCard key={job.id} job={job} />
             ))}
@@ -503,13 +503,13 @@ export const JobListingsSection = (): JSX.Element => {
             </a>
           </div>
 
-          <div className="flex gap-4 w-full items-center">
+          <div className="flex gap-4 w-full items-center max-md:flex-wrap">
             {latestJobs.map((job) => (
               <JobCard key={job.id} job={job} />
             ))}
           </div>
 
-          <div className="flex gap-4 w-full items-center">
+          <div className="flex gap-4 w-full items-center max-md:flex-wrap">
             {latestJobsRow2.map((job) => (
               <JobCard key={job.id} job={job} />
             ))}

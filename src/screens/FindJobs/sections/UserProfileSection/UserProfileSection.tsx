@@ -27,7 +27,7 @@ export const UserProfileSection = (): JSX.Element => {
   ];
 
   return (
-    <div className="flex flex-col w-full max-w-[346px] items-start gap-2.5">
+    <div className="flex max-lg:flex-wrap lg:flex-col w-full lg:max-w-[346px] items-start gap-2.5">
       {/* Profile Card */}
       <Card className="w-full overflow-hidden border border-solid">
         <CardContent className="p-0">
